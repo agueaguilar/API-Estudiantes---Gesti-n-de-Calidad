@@ -1,0 +1,22 @@
+{
+  "name": "apiestudiantessqa",
+  "version": "1.0.0",
+  "description": "API Estudiantes SQA - Primero el repositorio en Git, validación con SSH para no estar ingresando con credenciales cada vez, crear la rama de desarrollo en la rama principal (main), explicaciones de cada paso, controladores/api, define los modelos de datos, que correspondan a las entidades de la API (por ejemplo, 'Estudiante'). Routes: Configura las rutas que la API usará para procesar las solicitudes. Models: Define los modelos de datos, que correspondenden a las entidades de la API (por ejemplo, 'Estudiante'). Controller: Aquello que se encarga de los controladores, que contienen los procedimientos lógicos para manejar las solicitudes HTTP.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "sonar-scanner": "^3.1.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

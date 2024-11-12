@@ -1,0 +1,22 @@
+- config:
+    base_url: 'http://localhost:3000'  # URL base de tu API
+    default_headers:
+      Content-Type: application/json
+
+- test: "Prueba de creación de estudiante"
+  post: "/estudiantes"
+  body: 
+    nombre: "Juan Pérez"
+    edad: 20
+    curso: "Matemáticas"
+  expect:
+    status: 201
+    jsonpath_equals:
+      $.nombre: "Juan Pérez"
+
+- test: "Prueba de consulta de estudiante"
+  get: "/estudiantes/1"
+  expect:
+    status: 200
+    jsonpath_equals:
+      $.nombre: "Juan Pérez"

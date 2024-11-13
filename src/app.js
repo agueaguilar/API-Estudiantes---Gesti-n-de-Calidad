@@ -1,19 +1,24 @@
 const express = require('express');
 const app = express();
-const cors = require('cors');
 const port = 3000;
 
-// Habilitar CORS
-app.use(cors());
+// Middleware para habilitar CORS
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  next();
+});
 
 // Middleware para interpretar JSON en las solicitudes
 app.use(express.json());
 
-// Rutas de ejemplo
+// Ruta GET de ejemplo
 app.get('/api/students', (req, res) => {
   res.json({ message: 'Obteniendo estudiantes' });
 });
 
+// Ruta POST de ejemplo
 app.post('/api/students', (req, res) => {
   const { name, age } = req.body;
   res.json({ message: 'Estudiante creado', data: { name, age } });

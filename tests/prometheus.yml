@@ -1,0 +1,6 @@
+global:
+  scrape_interval: 15s  # Intervalo de monitoreo
+scrape_configs:
+  - job_name: 'app_estudiantes'
+    static_configs:
+      - targets: ['localhost:3000']  # Reemplaza con el puerto y host de tu aplicación
